@@ -117,7 +117,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="relative"
         >
-          <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5]">
+          <div className="WhatsApp Image 2026-04-02 at 9.07.24 PM">
             <img 
               src="/WhatsApp Image 2026-04-02 at 9.46.29 PM.jpeg" 
               alt="Healthy Food" 
@@ -193,7 +193,7 @@ const ProblemSolution = () => {
           </div>
           <div className="lg:w-1/3 relative">
             <img 
-              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" 
+              src="WhatsApp Image 2026-04-02 at 9.07.24 PM" 
               alt="Healthy Lifestyle" 
               className="rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500"
               referrerPolicy="no-referrer"
