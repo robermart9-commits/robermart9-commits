@@ -212,7 +212,7 @@ const AboutDaniela = () => {
         <div className="relative">
           <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
             <img 
-              src="public/daniela-2.jpeg"
+              src="/daniela-2.jpeg"
               alt="Daniela Cordero" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
