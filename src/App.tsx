@@ -119,7 +119,7 @@ const Hero = () => {
         >
           <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5]">
             <img 
-              src="public/daniela-1.jpeg" 
+              src="https://es.pinterest.com/pin/25684660371944546/" 
               alt="Healthy Food" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -193,7 +193,7 @@ const ProblemSolution = () => {
           </div>
           <div className="lg:w-1/3 relative">
             <img 
-              src="public/daniela-2.jpeg" 
+              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" 
               alt="Healthy Lifestyle" 
               className="rounded-3xl shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500"
               referrerPolicy="no-referrer"
@@ -212,7 +212,7 @@ const AboutDaniela = () => {
         <div className="relative">
           <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
             <img 
-              src="/WhatsApp Image 2026-04-02 at 9.07.24 PM.jpeg"
+              src="public/daniela-2.jpeg"
               alt="Daniela Cordero" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
