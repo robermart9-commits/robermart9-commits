@@ -120,7 +120,7 @@ const Hero = () => {
         >
           <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5]">
             <img 
-              src="/imgcomida.jpeg"
+              src={comidaImg}
               alt="Healthy Food" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
