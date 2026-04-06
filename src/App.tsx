@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
+import comidaImg from "./comida.jpeg";
 
 // --- Components ---
 
@@ -119,7 +120,7 @@ const Hero = () => {
         >
           <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5]">
             <img 
-              src="WhatsApp Image 2026-04-02 at 9.46.29 PM.jpeg" 
+              src={comidaImg}
               alt="Healthy Food" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
