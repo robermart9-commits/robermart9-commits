@@ -13,6 +13,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import comidaImg from "./assets/comida.jpeg";
+import daniImg from "./assets/dani.jpeg";
 
 // --- Components ---
 
@@ -213,7 +214,7 @@ const AboutDaniela = () => {
         <div className="relative">
           <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
             <img 
-              src="/daniela-2.jpeg"
+              src={daniImg}
               alt="Daniela Cordero" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
