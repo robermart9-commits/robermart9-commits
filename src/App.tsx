@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
-
+import comidaImg from "./assets/comida.jpeg";
 
 // --- Components ---
 
