@@ -8,18 +8,17 @@ import {
   Utensils, 
   User, 
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  Instagram
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
-import comidaImg from "./assets/comida.jpeg";
-import daniImg from "./assets/dani.jpeg";
 
 // --- Components ---
 
 const WhatsAppButton = () => {
   const phoneNumber = "593995537894";
-  const message = encodeURIComponent("Hola, quiero información sobre los planes de NutriFood");
+  const message = encodeURIComponent("Hola, quiero información sobre los planes de Freya");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (
@@ -52,22 +51,21 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? "bg-white/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-6"}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled ? "bg-[#F1E6D7]/90 backdrop-blur-md shadow-sm py-3" : "bg-transparent py-6"}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">N</div>
-          <span className="text-2xl font-display font-bold text-brand-primary tracking-tight">NutriFood</span>
+          <img src="/freya-logo.png" alt="Freya Logo" className="h-16 w-auto" />
         </div>
         <div className="hidden md:flex items-center gap-8">
-          <a href="#problema" className="text-sm font-medium hover:text-brand-primary transition-colors">Beneficios</a>
-          <a href="#daniela" className="text-sm font-medium hover:text-brand-primary transition-colors">Sobre Daniela</a>
-          <a href="#planes" className="text-sm font-medium hover:text-brand-primary transition-colors">Planes</a>
-          <a href="#faq" className="text-sm font-medium hover:text-brand-primary transition-colors">FAQ</a>
+          <a href="#problema" className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-900" : "text-brand-primary"}`}>Beneficios</a>
+          <a href="#daniela" className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-900" : "text-brand-primary"}`}>Sobre Daniela</a>
+          <a href="#planes" className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-900" : "text-brand-primary"}`}>Planes</a>
+          <a href="#faq" className={`text-sm font-medium transition-colors ${isScrolled ? "text-slate-900" : "text-brand-primary"}`}>FAQ</a>
           <a 
-            href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola, quiero información sobre los planes de NutriFood")}`}
+            href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola, quiero información sobre los planes de Freya")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-brand-primary text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-opacity-90 transition-all"
+            className="bg-brand-accent text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:scale-105 transition-all shadow-md shadow-brand-accent/20"
           >
             Empezar ahora
           </a>
@@ -87,29 +85,30 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6 }}
         >
+          <img src="/freya-logo.png" alt="Freya Logo" className="h-28 w-auto mb-8 hidden lg:block" />
           <span className="inline-block px-4 py-1.5 bg-brand-primary/10 text-brand-primary rounded-full text-sm font-bold mb-6">
-            Nutrición Real • Resultados Reales
+            Bienestar en cada bocado
           </span>
           <h1 className="text-5xl lg:text-7xl font-bold leading-[1.1] mb-6 text-slate-900">
-            Transforma tu cuerpo sin <span className="text-brand-primary italic">dietas extremas</span>
+            Nutrición que se adapta a <span className="text-brand-primary italic">tu estilo de vida</span>
           </h1>
           <p className="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
-            Planes de alimentación personalizados y guiados por la nutricionista Daniela Cordero. Come rico, siéntete bien y alcanza tus objetivos de salud.
+            Freya es un servicio de alimentación saludable guiada por nutricionista, con entrega a domicilio u oficinas. Ofrece planes de comida equilibrados, personalizados y listos para consumir.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a 
               href="#planes"
-              className="bg-brand-primary text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-brand-primary/20 hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2"
+              className="bg-brand-accent text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-xl shadow-brand-accent/20 hover:translate-y-[-2px] transition-all flex items-center justify-center gap-2"
             >
-              Ver Planes <ArrowRight className="w-5 h-5" />
+              Empieza tu plan saludable <ArrowRight className="w-5 h-5" />
             </a>
             <a 
-              href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola, quiero información sobre los planes de NutriFood")}`}
+              href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola, quiero información sobre los planes de Freya")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-slate-50 transition-all flex items-center justify-center gap-2"
             >
-              <MessageCircle className="w-5 h-5 text-[#25D366]" /> Hablar por WhatsApp
+              <MessageCircle className="w-5 h-5 text-[#25D366]" /> Consulta tu plan con nutricionista
             </a>
           </div>
         </motion.div>
@@ -121,8 +120,8 @@ const Hero = () => {
         >
           <div className="relative z-10 rounded-[40px] overflow-hidden shadow-2xl aspect-[4/5]">
             <img 
-              src={comidaImg}
-              alt="Healthy Food" 
+              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=2070&auto=format&fit=crop" 
+              alt="Healthy Food Bowl" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -134,7 +133,7 @@ const Hero = () => {
               </div>
               <span className="font-bold text-slate-800">Plan Mensual</span>
             </div>
-            <p className="text-sm text-slate-500">Incluye cita virtual personalizada con Daniela Cordero.</p>
+            <p className="text-sm text-slate-500">Bienestar en cada bocado</p>
           </div>
           {/* Decorative elements */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-primary/10 rounded-full blur-3xl" />
@@ -156,9 +155,9 @@ const ProblemSolution = () => {
     <section id="problema" className="py-24 bg-brand-secondary/30">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold mb-6">¿Te sientes identificado?</h2>
+          <h2 className="text-3xl lg:text-5xl font-bold mb-6">Recibe tus comidas en casa u oficina</h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-            Sabemos que llevar una vida saludable puede ser difícil en el mundo moderno. NutriFood nace para hacerlo simple.
+            Sabemos que llevar una vida saludable puede ser difícil en el mundo moderno. Freya nace para hacerlo simple.
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
@@ -176,11 +175,11 @@ const ProblemSolution = () => {
             </motion.div>
           ))}
         </div>
-        <div className="mt-20 bg-brand-primary rounded-[40px] p-8 lg:p-16 text-white flex flex-col lg:flex-row gap-12 items-center overflow-hidden relative">
+        <div className="mt-20 bg-[#777847] rounded-[40px] p-8 lg:p-16 text-white flex flex-col lg:flex-row gap-12 items-center overflow-hidden relative">
           <div className="relative z-10 lg:w-2/3">
-            <h3 className="text-3xl lg:text-4xl font-bold mb-6">NutriFood es tu aliado profesional</h3>
+            <h3 className="text-3xl lg:text-4xl font-bold mb-6">Freya es tu aliado profesional</h3>
             <p className="text-brand-secondary/80 text-lg mb-8 leading-relaxed">
-              No solo te damos una lista de comidas. Te brindamos un sistema diseñado por expertos para que logres tu mejor versión de forma práctica, deliciosa y sostenible.
+              No solo te damos un bowl de comida. Te brindamos un sistema diseñado por expertos para que logres tu mejor versión de forma práctica, deliciosa y sostenible.
             </p>
             <ul className="grid sm:grid-cols-2 gap-4">
               {["Menús personalizados", "Recetas fáciles", "Acompañamiento experto", "Sin pasar hambre"].map((item, i) => (
@@ -214,7 +213,7 @@ const AboutDaniela = () => {
         <div className="relative">
           <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl relative z-10">
             <img 
-              src={daniImg}
+              src="/WhatsApp Image 2026-04-02 at 9.07.24 PM.jpeg"
               alt="Daniela Cordero" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -252,7 +251,7 @@ const AboutDaniela = () => {
             href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola Daniela, quiero información sobre tus planes")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-brand-primary font-bold text-lg group"
+            className="inline-flex items-center gap-2 text-brand-accent font-bold text-lg group"
           >
             Conocer más sobre mi metodología <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
           </a>
@@ -265,77 +264,53 @@ const AboutDaniela = () => {
 const Pricing = () => {
   const categories = [
     {
-      title: "Bienestar y Alimentación Saludable",
-      subtitle: "Planes diseñados para mejorar tu energía y salud diaria.",
+      title: "Nuestros Planes Wellness",
+      subtitle: "Bienestar en cada bocado, diseñado para tu ritmo de vida.",
       plans: [
         {
-          name: "Plan Semanal",
-          price: "25",
-          period: "semanal",
-          desc: "5 días a la semana | Entrega a domicilio",
+          name: "Plan Básico",
+          price: "95",
+          period: "mensual",
+          desc: "Alimentación equilibrada para mantener una rutina saludable.",
           features: [
-            "5 días de alimentación saludable (lunes a viernes)",
-            "Entrega directa a domicilio",
-            "Menús equilibrados y diseñados por nutricionista",
-            "Ahorro de tiempo (sin cocinar ni planificar)",
-            "Porciones controladas y enfocadas en bienestar"
+            "20 almuerzos balanceados al mes",
+            "Entrega directa a casa u oficina",
+            "Menús variados y deliciosos",
+            "Ingredientes frescos y naturales",
+            "Porciones controladas por expertos"
           ],
           recommended: false,
-          promoTag: "Consulta virtual opcional: $30 (precio regular $35)"
+          promoTag: "Ideal para iniciar"
         },
         {
-          name: "Plan Mensual",
-          price: "90",
+          name: "Plan Hiperproteico",
+          price: "115",
           period: "mensual",
-          desc: "20 almuerzos saludables + entrega a domicilio",
+          desc: "Ideal para personas activas, entrenamiento o aumento de masa muscular.",
           features: [
-            "20 almuerzos (lunes a viernes) diseñados por nutricionista",
-            "Entrega directa a domicilio",
-            "Cálculo de requerimiento calórico personalizado",
-            "Consejería nutricional vía WhatsApp",
-            "Estructuración alimentaria enfocada en resultados",
-            "Balance nutricional optimizado en cada comida"
+            "20 almuerzos altos en proteína",
+            "Cálculo de requerimiento calórico",
+            "Enfoque en mantenimiento muscular",
+            "Mayor saciedad y energía",
+            "Entrega directa a domicilio"
           ],
           recommended: true,
-          promoTag: "Consulta virtual opcional: $30 (precio regular $35)"
-        }
-      ]
-    },
-    {
-      title: "Servicios Especializados",
-      subtitle: "Enfoques específicos para objetivos deportivos o condiciones de salud.",
-      plans: [
-        {
-          name: "Plan Alto en Proteína",
-          price: "125",
-          period: "mensual",
-          desc: "20 almuerzos al mes | Entrega a domicilio u oficina",
-          features: [
-            "20 almuerzos balanceados, altos en proteína",
-            "Cálculo de requerimiento calórico personalizado",
-            "Distribución nutricional equilibrada en cada comida",
-            "Enfoque en mantenimiento muscular y saciedad",
-            "Consejería nutricional vía WhatsApp",
-            "Entrega directa a domicilio o lugar de trabajo"
-          ],
-          recommended: false,
-          promoTag: "Consulta virtual opcional: $30 (precio regular $35)"
+          promoTag: "Más popular para deportistas"
         },
         {
           name: "Plan Terapéutico",
-          price: "115",
+          price: "110",
           period: "mensual",
-          desc: "20 almuerzos al mes | Entrega a domicilio u oficina",
+          desc: "Plan guiado por nutricionista para objetivos específicos de salud.",
           features: [
-            "20 almuerzos diseñados según tu condición médica",
-            "Cálculo de requerimientos nutricionales personalizados",
-            "Control de porciones enfocado en tu tratamiento",
-            "Adaptación del plan según diagnóstico médico",
-            "Orientación nutricional básica",
-            "Entrega directa a domicilio o lugar de trabajo"
+            "20 almuerzos adaptados a tu condición",
+            "Control riguroso de ingredientes",
+            "Supervisión nutricional experta",
+            "Enfoque en recuperación o control",
+            "Entrega personalizada"
           ],
           recommended: false,
-          promoTag: "Consulta virtual opcional: $30 (precio regular $35)"
+          promoTag: "Atención especializada"
         }
       ]
     }
@@ -345,23 +320,15 @@ const Pricing = () => {
     <section id="planes" className="py-24 bg-brand-secondary/30">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Nuestros Planes y Servicios</h2>
+          <h2 className="text-4xl lg:text-5xl font-bold mb-6">Nuestros Planes</h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
-            Inversión en tu salud hoy, bienestar para toda la vida.
+            Invierte en tu bienestar diario con Freya.
           </p>
         </div>
 
         {categories.map((cat, catIdx) => (
           <div key={catIdx} className="mb-20 last:mb-0">
-            <div className="mb-10">
-              <h3 className="text-2xl lg:text-3xl font-bold text-brand-primary mb-2 flex items-center gap-3">
-                <div className="w-2 h-8 bg-brand-primary rounded-full" />
-                {cat.title}
-              </h3>
-              <p className="text-slate-500 font-medium">{cat.subtitle}</p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {cat.plans.map((plan, i) => (
                 <motion.div
                   key={i}
@@ -369,20 +336,20 @@ const Pricing = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.2 }}
-                  className={`relative p-8 lg:p-12 rounded-[40px] border-2 transition-all flex flex-col ${
+                  className={`relative p-8 lg:p-10 rounded-[40px] border-2 transition-all flex flex-col ${
                     plan.recommended 
                       ? "bg-white border-brand-primary shadow-2xl scale-105 z-10" 
                       : "bg-white/50 border-slate-100 shadow-sm hover:bg-white hover:shadow-xl"
                   }`}
                 >
                   {plan.recommended && (
-                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-primary text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest">
+                    <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-brand-accent text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-widest">
                       Más Recomendado
                     </div>
                   )}
                   <div className="mb-6">
                     <h4 className="text-2xl font-bold mb-2">{plan.name}</h4>
-                    <p className="text-slate-500 text-sm">{plan.desc}</p>
+                    <p className="text-slate-500 text-sm h-12">{plan.desc}</p>
                   </div>
 
                   <div className="mb-6">
@@ -398,7 +365,7 @@ const Pricing = () => {
                   <ul className="space-y-4 mb-10 flex-grow">
                     {plan.features.map((f, idx) => (
                       <li key={idx} className="flex items-start gap-3 text-slate-700">
-                        <div className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${plan.recommended ? "bg-brand-primary text-white" : "bg-brand-secondary text-brand-primary"}`}>
+                        <div className={`mt-1 w-5 h-5 rounded-full flex items-center justify-center shrink-0 ${plan.recommended ? "bg-brand-accent text-white" : "bg-brand-secondary text-brand-primary"}`}>
                           <Check className="w-3 h-3" />
                         </div>
                         <span className="text-sm font-medium">{f}</span>
@@ -406,16 +373,16 @@ const Pricing = () => {
                     ))}
                   </ul>
                   <a 
-                    href={`https://wa.me/593995537894?text=${encodeURIComponent(`Hola, quiero contratar el ${plan.name}`)}`}
+                    href={`https://wa.me/593995537894?text=${encodeURIComponent(`Hola, quiero contratar el ${plan.name} de Freya`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`w-full py-4 rounded-2xl font-bold text-lg transition-all flex items-center justify-center gap-2 ${
                       plan.recommended 
-                        ? "bg-brand-primary text-white shadow-lg shadow-brand-primary/20 hover:bg-opacity-90" 
-                        : "bg-brand-secondary/50 text-brand-primary hover:bg-brand-secondary"
+                        ? "bg-brand-accent text-white shadow-lg shadow-brand-accent/20 hover:bg-opacity-90" 
+                        : "bg-brand-secondary text-brand-primary hover:bg-brand-secondary/80"
                     } shadow-sm hover:shadow-md transition-all`}
                   >
-                    Contratar ahora <ArrowRight className="w-5 h-5" />
+                   Contratar ahora <ArrowRight className="w-5 h-5" />
                   </a>
                 </motion.div>
               ))}
@@ -432,16 +399,16 @@ const FAQ = () => {
 
   const faqs = [
     { 
-      q: "¿Qué incluye cada plan de NutriFood y en qué se diferencian?", 
-      a: "Cada plan incluye almuerzos saludables diseñados por nutricionistas, entrega a domicilio y diferentes niveles de personalización. Se diferencian según tus objetivos: desde opciones básicas hasta planes con asesoría nutricional, cálculo calórico y enfoque específico (como alto en proteína o terapéutico)." 
+      q: "¿Qué incluye cada plan de Freya y en qué se diferencian?", 
+      a: "Cada plan incluye almuerzos saludables diseñados por nutricionistas, entrega a domicilio y diferentes niveles de personalización. Ofrecemos el Plan Básico, Hiperproteico y Terapéutico, cada uno adaptado a tus necesidades de bienestar o rendimiento." 
     },
     { 
       q: "¿Cómo funciona la entrega de los almuerzos a domicilio o trabajo?", 
-      a: "Realizamos entregas directas a tu domicilio u oficina en días programados, asegurando que recibas tus comidas listas para consumir sin preocuparte por cocinar o planificar." 
+      a: "Realizamos entregas directas a tu domicilio u oficina, asegurando que recibas tus comidas listas para consumir, permitiéndote disfrutar de bienestar en cada bocado sin complicaciones." 
     },
     { 
-      q: "¿Incluye el servicio acompañamiento o asesoría nutricional durante el plan?", 
-      a: "Sí, algunos planes incluyen acompañamiento nutricional vía WhatsApp para guiarte y asegurar resultados." 
+      q: "¿Incluye el servicio acompañamiento o asesoría nutricional?", 
+      a: "Sí, todos nuestros planes son guiados por expertos para asegurar que tu alimentación sea equilibrada y efectiva para tus objetivos." 
     }
   ];
 
@@ -483,30 +450,37 @@ const FAQ = () => {
 
 const Footer = () => {
   return (
-    <footer className="bg-slate-900 text-white py-20">
+    <footer className="bg-brand-primary text-white pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">N</div>
-              <span className="text-2xl font-display font-bold tracking-tight">NutriFood</span>
-            </div>
-            <p className="text-slate-400 max-w-sm mb-8">
-              Transformando vidas a través de la nutrición consciente y profesional. Guiado por Daniela Cordero.
+            <p className="text-brand-secondary/70 max-w-sm mb-8">
+              Freya: Bienestar en cada bocado. Alimentación consciente guiada por profesionales.
             </p>
             <div className="flex gap-4">
-              {/* Social icons placeholder */}
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
+              <a 
+                href="https://www.instagram.com/freya.ec1?igsh=MTgxa2ljbXRuMjN5Ng=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-accent transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://wa.me/593995537894"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-accent transition-colors"
+                aria-label="WhatsApp"
+              >
                 <MessageCircle className="w-5 h-5" />
-              </div>
-              <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-brand-primary transition-colors cursor-pointer">
-                <Heart className="w-5 h-5" />
-              </div>
+              </a>
             </div>
           </div>
           <div>
-            <h4 className="font-bold mb-6 uppercase tracking-widest text-sm text-brand-primary">Enlaces</h4>
-            <ul className="space-y-4 text-slate-400">
+            <h4 className="font-bold mb-6 uppercase tracking-widest text-sm text-brand-wellness">Enlaces</h4>
+            <ul className="space-y-4 text-brand-secondary/60">
               <li><a href="#" className="hover:text-white transition-colors">Inicio</a></li>
               <li><a href="#planes" className="hover:text-white transition-colors">Planes</a></li>
               <li><a href="#daniela" className="hover:text-white transition-colors">Sobre Daniela</a></li>
@@ -514,8 +488,8 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h4 className="font-bold mb-6 uppercase tracking-widest text-sm text-brand-primary">Contacto</h4>
-            <ul className="space-y-4 text-slate-400">
+            <h4 className="font-bold mb-6 uppercase tracking-widest text-sm text-brand-wellness">Contacto</h4>
+            <ul className="space-y-4 text-brand-secondary/60">
               <li className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4" /> +593 99 553 7894
               </li>
@@ -523,8 +497,8 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="pt-8 border-t border-white/10 text-center text-slate-500 text-sm">
-          <p>© {new Date().getFullYear()} NutriFood. Todos los derechos reservados.</p>
+        <div className="pt-8 border-t border-white/10 text-center text-slate-300 text-sm">
+          <p>© {new Date().getFullYear()} Freya. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>
@@ -539,24 +513,26 @@ const FinalCTA = () => {
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl" />
       </div>
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
-        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">¿Listo para empezar tu cambio hoy mismo?</h2>
+        <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8">¿Listo para empezar tu camino al bienestar?</h2>
         <p className="text-xl text-brand-secondary/80 mb-12">
-          No dejes para mañana la salud que puedes empezar a construir hoy. Daniela Cordero te espera para guiarte.
+          Empieza tu plan saludable hoy y recibe tus comidas en casa u oficina. Freya te acompaña en cada bocado.
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <a 
-            href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola, quiero información sobre los planes de NutriFood")}`}
+            href={`https://wa.me/593995537894?text=${encodeURIComponent("Hola, quiero información sobre los planes de Freya")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-brand-accent text-white px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3"
+          >
+            <MessageCircle className="w-6 h-6" /> Empieza tu plan saludable
+          </a>
+          <a 
+            href="https://www.instagram.com/freya.ec1?igsh=MTgxa2ljbXRuMjN5Ng=="
             target="_blank"
             rel="noopener noreferrer"
             className="bg-white text-brand-primary px-10 py-5 rounded-2xl font-bold text-xl shadow-2xl hover:scale-105 transition-all flex items-center justify-center gap-3"
           >
-            <MessageCircle className="w-6 h-6 text-[#25D366]" /> Hablar por WhatsApp
-          </a>
-          <a 
-            href="#planes"
-            className="bg-transparent border-2 border-white/30 text-white px-10 py-5 rounded-2xl font-bold text-xl hover:bg-white/10 transition-all"
-          >
-            Ver planes de nuevo
+            <Instagram className="w-6 h-6" /> Síguenos en Instagram
           </a>
         </div>
       </div>
